@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-s.png';
 import backIcon from '../assets/back-icon.png';
 import '../styles/navbar.css';
 
