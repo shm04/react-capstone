@@ -34,17 +34,19 @@ const leaguesSlice = createSlice({
             ...payloadArray.map((league) => ({
               id: league.id,
               name: league.name,
-              logo: league.logos, // Assuming there is only one logo URL in the logos array
+              logo: league.logos,
+              slug: league.slug,
+              abbr: league.abbr,
             })),
           ],
         };
-      })      
+      })
       .addCase(getLeagues.rejected, (state, action) => {
         state.loading = false;
         state.status = 'failed';
         state.error = action.error.message;
       });
-  },  
+  },
 });
 
 export default leaguesSlice.reducer;

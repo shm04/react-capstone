@@ -1,0 +1,17 @@
+h1 {
+  text-align: center;
+  color: #fff;
+}
+
+.main-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 50px;
+  background-color: #4268b0;
+}
+
+.loading {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}

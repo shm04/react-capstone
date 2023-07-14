@@ -1,24 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import '../styles/league.css';
 
 function League({
-  id, name, logo,
+  id, logo, name, slug, abbr,
 }) {
-
   return (
-    <button className="league-section" id={id}>
+    <Link
+      to={`/leagues/${id}?name=${name}&slug=${slug}&abbr=${abbr}&logo=${encodeURIComponent(logo)}`}
+      key={id}
+      className="league-section"
+    >
       <img src={logo.light} className="league-logo" alt="league-logo" />
-      <div className="details">
-        <h2 className="title">{name}</h2>
-      </div>
-    </button>
+    </Link>
   );
 }
 
 League.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  logo: PropTypes.arrayOf(PropTypes.string).isRequired,
+  abbr: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  logo: PropTypes.shape({
+    light: PropTypes.string.isRequired,
+    dark: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default League;

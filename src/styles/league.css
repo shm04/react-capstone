@@ -1,0 +1,12 @@
+.league-section {
+  border: solid 1px #2b4470;
+  background-color: #4268b0;
+}
+
+.league-section:hover {
+  background-color: #3f63a5;
+}
+
+.league-logo {
+  width: 90%;
+}

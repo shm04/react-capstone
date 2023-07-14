@@ -1,0 +1,26 @@
+body {
+  background-color: #4268b0;
+}
+
+.main-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  background-color: #4268b0;
+  color: #fff;
+  padding: 20px;
+}
+
+.main-description h2 {
+  font-size: 40px;
+}
+
+.main-description h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.main-description p {
+  font-size: 25px;
+}
