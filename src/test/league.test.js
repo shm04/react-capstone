@@ -1,41 +1,57 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable no-unused-vars */
-
 import React from 'react';
-import { toBeInTheDocument } from '@testing-library/jest-dom/extend-expect';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { render } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import League from '../components/league';
+import '@testing-library/jest-dom/extend-expect';
+
+const mockLeague = {
+  id: '1',
+  name: 'League 1',
+  slug: 'league-1',
+  abbr: 'L1',
+  logo: {
+    light: 'logo-light.png',
+    dark: 'logo-dark.png',
+  },
+};
 
 describe('League component', () => {
-  const leagueProps = {
-    id: '1',
-    logo: {
-      light: 'light-logo-url',
-      dark: 'dark-logo-url',
-    },
-    name: 'League Name',
-    slug: 'league-slug',
-    abbr: 'L',
-  };
-
-  test('renders league component with correct props', () => {
-    render(
-      <MemoryRouter>
-        <League {...leagueProps} />
-      </MemoryRouter>,
+  it('should render league logo and arrow', () => {
+    const { getByAltText } = render(
+      <Router>
+        <League
+          id={mockLeague.id}
+          name={mockLeague.name}
+          slug={mockLeague.slug}
+          abbr={mockLeague.abbr}
+          logo={mockLeague.logo}
+        />
+      </Router>,
     );
-    const leagueLogo = screen.getByAltText('league-logo');
+
+    const leagueLogo = getByAltText('league-logo');
+    const arrow = getByAltText('arrow');
+
     expect(leagueLogo).toBeInTheDocument();
+    expect(arrow).toBeInTheDocument();
   });
 
-  test('renders league component with required props', () => {
-    render(
-      <MemoryRouter>
-        <League {...leagueProps} />
-      </MemoryRouter>,
+  it('should render link with correct URL and query parameters', () => {
+    const { getByTestId } = render(
+      <Router>
+        <League
+          id={mockLeague.id}
+          name={mockLeague.name}
+          slug={mockLeague.slug}
+          abbr={mockLeague.abbr}
+          logo={mockLeague.logo}
+        />
+      </Router>,
     );
-    expect(screen.getByRole('link')).toBeInTheDocument();
-    expect(screen.getByAltText('league-logo')).toBeInTheDocument();
+
+    const leagueLink = getByTestId('league-link');
+    const expectedURL = '/leagues/1?name=League 1&slug=league-1&abbr=L1&logo=%5Bobject%20Object%5D';
+
+    expect(leagueLink).toHaveAttribute('href', expectedURL);
   });
 });

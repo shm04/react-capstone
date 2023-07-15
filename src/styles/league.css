@@ -1,6 +1,12 @@
 .league-section {
   border: solid 1px #2b4470;
   background-color: #4268b0;
+  display: flex;
+}
+
+#arrow {
+  height: 25px;
+  padding: 5px 5px 0 0;
 }
 
 .league-section:hover {
@@ -8,5 +14,5 @@
 }
 
 .league-logo {
-  width: 90%;
+  width: 85%;
 }
