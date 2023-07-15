@@ -1,0 +1,27 @@
+#menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  border: 1px solid #2b4470;
+  padding: 10px 30px;
+  margin: 0;
+  background-color: #4268b0;
+}
+
+#menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#menu li.active a {
+  text-decoration: underline;
+}
+
+#about {
+  margin-left: auto;
+}
+
+#back-icon {
+  height: 30px;
+}
