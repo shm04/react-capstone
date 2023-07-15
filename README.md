@@ -165,6 +165,8 @@ If you like this project give it a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+Original design idea by Nelson Sakwa on Behance, protected with Creative Commons License.
+
 Inspired by Microverse's curriculum
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
