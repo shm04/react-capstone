@@ -21,7 +21,7 @@ function Leagues() {
     <section>
       <h1>Leagues information</h1>
       <div className="main-div">
-        {leagues.slice(0, 18).map((league) => (
+        {leagues.slice(0, 18).map((league, index) => (
           <League
             key={league.id}
             id={league.id}
@@ -29,6 +29,7 @@ function Leagues() {
             logo={league.logo}
             abbr={league.abbr}
             slug={league.slug}
+            className={index % 2 === 0 ? 'league-section dark' : 'league-section light'}
           />
         ))}
       </div>

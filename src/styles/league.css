@@ -4,6 +4,16 @@
   display: flex;
 }
 
+.league-section:nth-child(4n-1),
+.league-section:nth-child(4n-2) {
+  background-color: #4d6ba7; /* Dark blue */
+}
+
+.league-section:nth-child(4n),
+.league-section:nth-child(4n-3) {
+  background-color: #3a5288; /* Light blue */
+}
+
 #arrow {
   height: 25px;
   padding: 5px 5px 0 0;
