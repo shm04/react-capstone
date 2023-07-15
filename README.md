@@ -68,6 +68,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://react-capstone-hje4.onrender.com)
+- [Video Description](https://www.loom.com/share/5866b895e90d4bf1aeb4ffd95e10e495?sid=9f8c2f7f-1906-42fe-9c8d-9a40bb9b0433)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
